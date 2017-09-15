@@ -1,5 +1,4 @@
-# hack-into-it-2017-web
+Setup Instructions:
 
 1. Clone this repo
-2. `npm install`
-3. `serve`
+2. Open `index.html` in your browser
