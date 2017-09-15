@@ -6,10 +6,10 @@ $('.carousel-item').on('click', function (e) {
 	$modalBody.text(restaurants[foodType].desc);
 	$modal.modal();
 	$modal.on('shown.bs.modal', function () {
-			$carousel.carousel('pause');
+		$carousel.carousel('pause');
 	});
 	$modal.on('hidden.bs.modal', function () {
-			$carousel.carousel('cycle');
-			reserved = false;
+		$carousel.carousel('cycle');
+		reserved = false;
 	});
 });
