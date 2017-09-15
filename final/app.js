@@ -7,11 +7,11 @@
 		},
 		pizza: {
 			name: 'Pizza',
-			desc: 'This Pizza will make your tongue slap your brain.'
+			desc: 'This pizza will make your tongue slap your brain.'
 		},
 		fries: {
 			name: 'Fries',
-			desc: 'All day every day. You will never visit a fast food restaurant again'
+			desc: 'All day err day. You will never visit another restaurant ever again.'
 		}
 	};
 
