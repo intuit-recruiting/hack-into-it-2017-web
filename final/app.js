@@ -37,6 +37,44 @@
 		});
 	});
 
+	function search() {
+			var term = document.getElementById("search-term").value;
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+			  // Code inside here is executed each time the progress of the HTTP request advances.
+			  // The current state can be retrieved via `this.readyState`, which returns a value ranging
+			  // from 0 to 4 (inclusive).
+			  if (this.readyState == 4) { // If the HTTP request has completed
+			    if (this.status == 200) { // If the HTTP response code is 200 (e.g. successful)
+			      var response = JSON.parse(this.responseText); // Retrieve the response text
+						document.getElementById("gif").src = response.data[0].images.original.url;
+
+			    };
+			  };
+			};
+			xhr.open("GET", `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=24lZVNYJMtBGnEI4jd5Yt09JzUv4Nmrx&limit=5`);
+			xhr.send();
+		};
+
+	$('#gif').on("click", function() {
+		var term = document.getElementById("search-term").value;
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			// Code inside here is executed each time the progress of the HTTP request advances.
+			// The current state can be retrieved via `this.readyState`, which returns a value ranging
+			// from 0 to 4 (inclusive).
+			if (this.readyState == 4) { // If the HTTP request has completed
+				if (this.status == 200) { // If the HTTP response code is 200 (e.g. successful)
+					var response = JSON.parse(this.responseText); // Retrieve the response text
+					document.getElementById("gifPic").src = response.data[0].images.original.url;
+
+				};
+			};
+		};
+		xhr.open("GET", `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=24lZVNYJMtBGnEI4jd5Yt09JzUv4Nmrx&limit=5`);
+		xhr.send();
+	})
+
 	// React to "reserve" button click
 	$('.btn-success').on('click', function () {
 		if (reserved) return;
